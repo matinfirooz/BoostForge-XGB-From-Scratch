@@ -101,14 +101,14 @@ repeat
 
 For a node with gradient sum `G` and Hessian sum `H`, the optimal leaf weight is
 
-\[
-w^*=-\frac{G}{H+\lambda}
-\]
+$$
+w^* = -\frac{G}{H+\lambda}
+$$
 
 A candidate split is scored by
 
-\[
-Gain =
+$$
+\text{Gain} =
 \frac{1}{2}
 \left[
 \frac{G_L^2}{H_L+\lambda}
@@ -118,7 +118,7 @@ Gain =
 \frac{G^2}{H+\lambda}
 \right]
 -\gamma
-\]
+$$
 
 That is the key difference between this project and a basic residual-fitting
 Gradient Boosting tutorial.
