@@ -67,16 +67,7 @@ $$
 A candidate split is accepted when its gain is positive:
 
 $$
-Gain =
-\frac{1}{2}
-\left[
-\frac{G_L^2}{H_L+\lambda}
-+
-\frac{G_R^2}{H_R+\lambda}
--
-\frac{G^2}{H+\lambda}
-\right]
--\gamma
+\mathrm{Gain} = \frac{1}{2}\left(\frac{G_L^2}{H_L+\lambda} + \frac{G_R^2}{H_R+\lambda} - \frac{G^2}{H+\lambda}\right) - \gamma
 $$
 
 This means the tree is not minimizing plain variance. It is directly optimizing
