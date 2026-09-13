@@ -8,9 +8,9 @@ CatBoost, or scikit-learn estimators.
 
 The raw prediction after `t` trees is
 
-\[
+$$
 \hat y_i^{(t)} = \hat y_i^{(t-1)} + \eta f_t(x_i)
-\]
+$$
 
 where `eta` is the learning rate and `f_t` is the new tree.
 
@@ -19,7 +19,7 @@ where `eta` is the learning rate and `f_t` is the new tree.
 Instead of fitting residuals with ordinary least squares, BoostForge expands the
 objective around the current prediction:
 
-\[
+$$
 \mathcal{L}^{(t)}
 \approx
 \sum_i
@@ -30,43 +30,43 @@ g_i f_t(x_i)
 \right]
 +
 \Omega(f_t)
-\]
+$$
 
 with first derivatives `g_i` and second derivatives `h_i`.
 
 For binary logistic loss:
 
-\[
+$$
 g_i = p_i-y_i, \qquad
 h_i = p_i(1-p_i)
-\]
+$$
 
 For squared-error regression:
 
-\[
+$$
 g_i = \hat y_i-y_i, \qquad
 h_i = 1
-\]
+$$
 
 ## 3. Optimal leaf weight
 
 For a leaf containing samples `I`, define
 
-\[
+$$
 G=\sum_{i\in I}g_i,\qquad H=\sum_{i\in I}h_i
-\]
+$$
 
 The regularized Newton step stored in that leaf is
 
-\[
+$$
 w^*=-\frac{G}{H+\lambda}
-\]
+$$
 
 ## 4. Split gain
 
 A candidate split is accepted when its gain is positive:
 
-\[
+$$
 Gain =
 \frac{1}{2}
 \left[
@@ -77,7 +77,7 @@ Gain =
 \frac{G^2}{H+\lambda}
 \right]
 -\gamma
-\]
+$$
 
 This means the tree is not minimizing plain variance. It is directly optimizing
 the current boosting objective.
