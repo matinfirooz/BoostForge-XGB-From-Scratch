@@ -107,18 +107,19 @@ $$
 
 A candidate split is scored by
 
-$$
-Gain =
+```math
+\operatorname{Gain}
+=
 \frac{1}{2}
-\left[
-\frac{G_L^2}{H_L+\lambda}
+\left(
+\frac{G_L^{2}}{H_L+\lambda}
 +
-\frac{G_R^2}{H_R+\lambda}
+\frac{G_R^{2}}{H_R+\lambda}
 -
-\frac{G^2}{H+\lambda}
-\right]
--\gamma
-$$
+\frac{G^{2}}{H+\lambda}
+\right)
+-
+\gamma
 
 That is the key difference between this project and a basic residual-fitting
 Gradient Boosting tutorial.
